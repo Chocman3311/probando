@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>API</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/navbar.js"></script>
+    <script>
+
+        $(document).ready(function(){
+          cargarNavbar2();
+          $("#error").hide();
+
+            $("#enviar").click(function(){
+            var numId = $("#numId").val();
+            var mensaje ="";
+            
+          if($("#numId").val().trim() > 4  ){
+            mensaje = "ID invalida. Inserte ID del 1 al 4";
+          }
+          if($("#numId").val().trim() <= 0  ){
+            mensaje = "ID invalida. Inserte ID del 1 al 4";
+          }
+
+          
+          if(mensaje != ""){
+            $("#error").html(mensaje); 
+            $("#error").show();
+            event.preventDefault();
+          }  
+           
+            else
+              
+                  $.get(`https://vpic.nhtsa.dot.gov/api/vehicles/getallmanufacturers?format=json&page=${numId}`
+                  ,function(data){
+                    $.each(data.Results,function(i,items){
+                      if(items.Mfr_CommonName === null){
+                          
+                        items.Mfr_CommonName = "Nombre Común No registrado"
+                          
+                        }
+                      if(items.Country == ""){
+                         
+                        items.Country = "PAIS NO ENCONTRADO"
+                         
+                        }
+                    $("#categorias").append(
+                              `<tr><td>${items.Mfr_ID}</td><td>${items.Mfr_CommonName}</td><td>${items.Mfr_Name}</td><td>${items.Country}</td><td></td><tr>`
+                                  
+                        )   
+                        $("#error").hide();                                                                                                                                                                                                            
+                      })
+                    
+
+                })
+            })
+            
+          })
+
+</script>
+</head>
+<body>
+<div id="contenedor2"></div>
+<div class="container">
+    <div class="row">
+        <h1>Traer datos de mantenciones</h1>
+    </div>
+    <div class="row">
+      <p>Actualmente nuestra pagina consta de 4 listados de autos con sus respectivos detalles. Para buscar cada listado marque del numero 1 al 4.</p>
+      <form id="formulario">
+        <div>
+      <label for="numId" style="color: white;">Ingresar ID</label>
+      <input type="number" class="form-control" id="numId">
+      <button type="button" class="btn btn-primary" id="enviar">Traer datos</button>
+      </div>
+    <div>
+    <table class="table" id="categorias">
+        <thead>
+            <tr>
+                <th scope="col">ID Auto</th>
+                <th scope="col">Nombre Comun</th>
+                <th scope="col">Nombre Especifico</th>
+                <th scope="col">Pais</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+
+    </table>
+    <div id="error" class="alert alert-danger" role="alert"></div>
+  </div>
+  </form>
+  </div>
+</div>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>
