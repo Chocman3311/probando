@@ -26,7 +26,7 @@
   
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="logo" href="{% url 'index' %}"><img src="https://st.depositphotos.com/1006018/3132/v/600/depositphotos_31322065-stock-illustration-automotive-mechanic-car-repair-retro.jpg" alt="Logito"
+      <a class="logo" href="{% url 'index' %}"><img src="{% static 'core/img/Logo.jpg' %}" alt="Logito"
         width="100px"> </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -124,6 +124,8 @@
 </nav>
 
 
+
+
   <div class="container">
     <div class="row">
       <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -132,26 +134,28 @@
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
+        
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <a href="{% url 'trabajos' %}"><img src="http://www.pelp.cl/blog/wp-content/uploads/2016/09/Las-principales-caracter%C3%ADsticas-de-un-taller-electromec%C3%A1nico-especializado.jpg" class="d-block w-100" alt="Automotriz"
+            <a href="{% url 'trabajos' %}"><img src="{{ca.imagenCarrusel}}" class="d-block w-100" alt="Automotriz"
             height="600px"></a>
             <div class="carousel-caption d-inline d-md-block">
-              <h5>Especialista en electronica automotriz</h5>
+              <h5>{{ca.textoCarrusel}}</h5>
+            </div>
+            
+          </div>
+          <div class="carousel-item">
+            <a href="{% url 'trabajos' %}"><img src="{{ca.imagenCarrusel}}" class="d-block w-100" alt="Esp. SYD"
+            height="600px"></a>
+            <div class="carousel-caption d-inline d-md-block">
+              <h5>{{ca.textoCarrusel}}</h5>
             </div>
           </div>
           <div class="carousel-item">
-            <a href="{% url 'trabajos' %}"><img src="https://www.pelp.cl/blog/wp-content/uploads/2016/11/Los-6-aspectos-a-considerar-al-abrir-un-taller-mec%C3%A1nico.jpg" class="d-block w-100" alt="Esp. SYD"
+            <a href="{% url 'trabajos' %}"><img src="{{ca.imagenCarrusel}}" class="d-block w-100" alt="cajas"
             height="600px"></a>
             <div class="carousel-caption d-inline d-md-block">
-              <h5>Especialista en cajas de cambio</h5>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <a href="{% url 'trabajos' %}"><img src="https://i.pinimg.com/564x/07/6e/62/076e62d4469a8a19239564bf56957495.jpg" class="d-block w-100" alt="cajas"
-            height="600px"></a>
-            <div class="carousel-caption d-inline d-md-block">
-              <h5>Especialista en suspension y direccion.</h5>
+              <h5>{{ca.textoCarrusel}}</h5>
             </div>
           </div>
         </div>
@@ -167,8 +171,6 @@
 
     </div>
   </div>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </body>

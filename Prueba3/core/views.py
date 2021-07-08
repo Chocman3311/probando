@@ -1,11 +1,17 @@
+from core.models import Carrusel
 from django.shortcuts import render
 
 # Create your views here.
 
 
 def index(request):
+    carruselCompleto = Carrusel.objects.all()
+    datos = {
+        "carruselCompleto": carruselCompleto
+    }
+    
 
-    return render(request, 'core/index.html')
+    return render(request, 'core/index.html', datos)
 
 def trabajos(request):
 
