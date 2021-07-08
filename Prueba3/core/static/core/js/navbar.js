@@ -1,7 +1,7 @@
 function cargarNavbar2(){
     $("#contenedor2").append(`  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="logo" href="../index.html"><img src="https://st.depositphotos.com/1006018/3132/v/600/depositphotos_31322065-stock-illustration-automotive-mechanic-car-repair-retro.jpg" alt="Logito"
+      <a class="logo" href=""><img src="https://st.depositphotos.com/1006018/3132/v/600/depositphotos_31322065-stock-illustration-automotive-mechanic-car-repair-retro.jpg" alt="Logito"
         width="100px"> </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -9,10 +9,10 @@ function cargarNavbar2(){
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item me-4">
-            <a class="nav-link" href="/index.html">Inicio</a>
+            <a class="nav-link" href="">Inicio</a>
           </li>
           <li class="nav-item me-4">
-            <a class="nav-link " href="/PAGINAS/trabajos.html">Trabajos</a>
+            <a class="nav-link " href="">Trabajos</a>
           </li>
           <li class="nav-item me-4">
             <a class="nav-link" href="/PAGINAS/acercade.html">Acerca De</a>
