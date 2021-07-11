@@ -121,24 +121,20 @@
 </div>
 </nav>
 
-
-
-
+{%for ac in varAcercaDe%}
 <div align = "center">
-  <img src = "https://st.depositphotos.com/1006018/3132/v/600/depositphotos_31322065-stock-illustration-automotive-mechanic-car-repair-retro.jpg" alt="Logito" 
+  <img src = "{{ac.imagenLogo}}" alt="Logito" 
     width="300px" height="200px">
 </div>
 
 
-<p class = "acercadeTexto">Lorem ipsum dolor sit amet consectetur adipiscing elit libero, iaculis nec convallis mollis porta facilisi magnis nostra interdum, porttitor commodo platea purus mauris scelerisque inceptos. Hendrerit habitant purus pharetra netus sed sociis luctus convallis tristique aliquet ridiculus, himenaeos velit ut faucibus lectus risus ante turpis nisi libero justo, vivamus mi fames habitasse nibh diam sagittis dictumst eleifend volutpat. Venenatis fringilla vivamus convallis condimentum suscipit eros fames imperdiet lacinia, purus accumsan metus vulputate eget facilisi quam mi auctor, lobortis posuere gravida ultrices mollis platea pharetra nibh.</p>
-<p class = "siguenosEn">Siguenos en:</p>
+<p class = "acercadeTexto">{{ac.textoAcercade}}</p>
+<p class = "siguenosEn">{{ac.textoSiguenos}}</p>
 <body>
 <div align= "center">
-  <a href="https:facebook.com"><img src="https://cdn.icon-icons.com/icons2/642/PNG/512/facebook_icon-icons.com_59205.png" alt="IconoFaceBook" width="50px" height="50px"></a>
-  <a href="https:twitter.com"><img src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c53e.png" alt="IconoTwitter" width="50px" height="50px"></a>
-  <a href="https:instagram.com"><img src="https://i.pinimg.com/originals/3b/21/c7/3b21c7efd2ba9c119fb8d361acacc31d.png" alt="IconoInstagram" width="50px" height="50px"></a>
-  <a href="https:youtube.com"><img src="https://cdn.icon-icons.com/icons2/195/PNG/256/YouTube_23392.png"  alt="IconoYoutube" width="50px" height="50px"></a>
+  <a href="https:instagram.com"><img src="{{ac.fotoSiguenos}}" alt="IconoInstagram" width="50px" height="50px"></a>
 </div>
+{%endfor%}
 </body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </body>
