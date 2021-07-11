@@ -121,31 +121,33 @@
 
 <div class="container">
   <div class="row">
+    {%for tr in varTrabajos%}
     <div class="card m-4" style="width: 18rem;">
-      <img src="https://www.pelp.cl/blog/wp-content/uploads/2016/11/Los-6-aspectos-a-considerar-al-abrir-un-taller-mec%C3%A1nico.jpg"class="card-img-top" alt="Maquinaria">
+      <img src="{{tr.imagenTrabajo}}"class="card-img-top" alt="Maquinaria">
       <div class="card-body">
-        <h3 class="card-title">Mecanica Automotriz</h3>
+        <h3 class="card-title">{{tr.tituloTrabajo}}</h3>
+    
         <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#{{tr.idCarta}}">
               Ver detalle del trabajo
             </button>
 
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="{{tr.idCarta}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h3 class="modal-title" id="exampleModalLabel">Mecanica Automotriz</h3>
+                    <h3 class="modal-title" id="exampleModalLabel">{{tr.tituloTrabajo}}</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    Diagnostico: Bueno
+                    Diagnostico: {{tr.diagnostico}}
                     <br>
-                    Mecanico: Bastian Aguilera
+                    Mecanico: {{tr.mecanico}}
                     <br>
-                    Fecha: 20/08/2020
+                    Fecha: {{tr.fecha}}
                     <br>
-                    Listado de Materiales: Escáner, Osciloscopio, Multímetro
+                    Listado de Materiales: {{tr.listadoMateriales}}
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
@@ -155,182 +157,7 @@
             </div>
       </div>
     </div>
-    <div class="card m-4" style="width: 18rem;">
-      <img src="https://alianzaautomotriz.com/wp-content/uploads/2020/08/Alianza-Automotriz-Taller-Ford-Zapata-014.jpg"class="card-img-top" alt="...">
-      <div class="card-body">
-        <h3 class="card-title">Especialista en suspension y cajas</h3>
-        <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-              Ver detalle del trabajo
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h3 class="modal-title" id="exampleModalLabel2">Especialista en suspension y cajas</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    Diagnostico: Bueno
-                    <br>
-                    Mecanico: Camilo alavarado
-                    <br>
-                    Fecha: 14/03/2018
-                    <br>
-                    Listado de Materiales: Llave inglesa, Auto
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-      </div>
-    </div>
-    <div class="card m-4" style="width: 18rem;">
-      <img src="http://www.pelp.cl/blog/wp-content/uploads/2017/10/mejorar-taller-mec%C3%A1nico.jpg"class="card-img-top" alt="...">
-      <div class="card-body">
-        <h3 class="card-title">Cambios de Ruedas</h3>
-        <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal3">
-              Ver detalle del trabajo
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h3 class="modal-title" id="exampleModalLabel3">Cambios de Ruedas</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    Diagnostico: Regular
-                    <br>
-                    Mecanico: Jose Henriquez
-                    <br>
-                    Fecha: 15/05/2017
-                    <br>
-                    Listado de Materiales: Rueda
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-      </div>
-    </div>
-    <div class="card m-4" style="width: 18rem;">
-      <img src="http://www.dinamica-de-sistemas.com/revista/1215r.jpg"class="card-img-top" alt="...">
-      <div class="card-body">
-        <h3 class="card-title">lineacion de Camper</h3>
-        <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal4">
-              Ver detalle del trabajo
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h3 class="modal-title" id="exampleModalLabel4">lineacion de Camper</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    Diagnostico: Excelente
-                    <br>
-                    Mecanico: Eduardo Ramos
-                    <br>
-                    Fecha: 12/08/2018
-                    <br>
-                    Listado de Materiales: Camper, herramienta especial
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-
-                  </div>
-                </div>  
-              </div>
-            </div>
-      </div>
-    </div>
-    <div class="card m-4" style="width: 18rem;">
-      <img src="https://previews.123rf.com/images/didesign021/didesign0211608/didesign021160800027/62869473-guapo-musculoso-sexy-mec%C3%A1nico-en-el-trabajo.jpg" width="class="card-img-top" alt="...">
-      <div class="card-body">
-        <h3 class="card-title">Mantenimiento.D.T</h3>
-        <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal5">
-              Ver detalle del trabajo
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel5" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h3 class="modal-title" id="exampleModalLabel5">Mantenimiento.D.T</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    Diagnostico: Bueno
-                    <br>
-                    Mecanico: Perez Lopez
-                    <br>
-                    Fecha: 10/10/2020
-                    <br>
-                    Listado de Materiales: herramienta
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-      </div>
-    </div>
-    <div class="card m-4" style="width: 18rem;">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc_bE7hUmF2_Ksn9HZQwTZ6sfW_W5LNd3yGw&usqp=CAU"class="card-img-top" alt="...">
-      <div class="card-body">
-        <h3 class="card-title">Electronica Automotriz</h3>
-        <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal6">
-              Ver detalle del trabajo
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel6" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h3 class="modal-title" id="exampleModalLabel6">Electronica Automotriz</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    Diagnostico: Excelente
-                    <br>
-                    Mecanico: Felipe Gonzáles
-                    <br>
-                    Fecha: 14/03/2021
-                    <br>
-                    Listado de Materiales: cables, etc..
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-      </div>
-    </div>
- 
+    {%endfor%}
   </div>
 </div>
 <!-- Se agregan las cartas-->

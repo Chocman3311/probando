@@ -143,27 +143,32 @@
 
 <div class="container">
   <div class="row">
+    
     <form id="formulario">
+      {%for fc in varFormulario%}
     <div class="form-group mb-3">
-      <label for="nombre" class="form-label">Nombre</label>
+      <label for="nombre" class="form-label">{{fc.nombreFormulario}}</label>
       <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Sebastian">
     </div>
-    
+      {%endfor%}
+      {%for fc in varFormulario%}
     <div class="form-group mb-3">
-      <label for="apellido" class="form-label">Apellidos</label>
+      <label for="apellido" class="form-label">{{fc.apellidoFormulario}}</label>
       <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Molina Rojas">
     </div>
-
+      {%endfor%}
+      {%for fc in varFormulario%}
     <div class="form-group mb-3">
-      <label for="email" class="form-label">Email</label>
+      <label for="email" class="form-label">{{fc.emailFormulario}}</label>
       <input type="email" class="form-control" id="email" name="email" placeholder="qwerty@gmail.com">
     </div>
-
+    {%endfor%}
+    {%for fc in varFormulario%}
     <div class="form-group mb-3">
-      <label for="Textarea" class="form-label">Comentario</label>
+      <label for="Textarea" class="form-label">{{fc.comentarioFormulario}}</label>
       <textarea class="form-control" id="Textarea" rows="4" placeholder="Aquí escriba su comentario"></textarea>
     </div>
-
+    {%endfor%}
     <div>
       <input type="submit" class="btn btn-primary my-3" id="enviar" value="Enviar"></input>
       <input type="reset" class="btn btn-primary my-3" id="limpiar" value="Limpiar"></input>
