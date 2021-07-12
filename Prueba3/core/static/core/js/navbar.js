@@ -17,7 +17,6 @@ function cargarNavbar2() {
     console.log(urlFormateada);
 
 
-
     $.get(urlFormateada, function (data) {
       // $.each(data.data,function(i, sitio){
       console.log(data);
