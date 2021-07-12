@@ -22,7 +22,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="logo" href="{% url 'index' %}"><img src="https://st.depositphotos.com/1006018/3132/v/600/depositphotos_31322065-stock-illustration-automotive-mechanic-car-repair-retro.jpg" alt="Logito"
+      <a class="logo" href="{% url 'index' %}"><img src="{% static 'core/img/imgLogo/Logo.jpg' %}" alt="Logito"
         width="100px"> </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -50,8 +50,7 @@
             </ul>
         </ul>
         <div class="clima me-4">
-        <button id="PedirClima" class="btn btn-primary">Pedir Clima</button>        
-         <div class="alert m-1" role="alert" id="msg" style="color: white;">
+         <div class="alert m-1" role="alert" id="msg" style="color: white;">cargando..
     </div>
     </div>
         <form class="d-flex me-4 ">
@@ -123,7 +122,7 @@
   <div class="row">
     {%for tr in varTrabajos%}
     <div class="card m-4" style="width: 18rem;">
-      <img src="{{tr.imagenTrabajo}}"class="card-img-top" alt="Maquinaria">
+      <img src="{{tr.imagenTrabajo.url}}"class="card-img-top" alt="Maquinaria">
       <div class="card-body">
         <h3 class="card-title">{{tr.tituloTrabajo}}</h3>
         <!-- Button trigger modal -->

@@ -134,7 +134,7 @@ STATIC_ROOT = ''
 
 MEDAI_URL = '/img/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/core/img')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'core/static/core/img')
 
 
 

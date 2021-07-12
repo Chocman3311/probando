@@ -26,7 +26,7 @@
   
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="logo" href="{% url 'index' %}"><img src="{% static 'core/img/Logo.jpg' %}" alt="Logito"
+      <a class="logo" href="{% url 'index' %}"><img src="{% static 'core/img/imgLogo/Logo.jpg' %}" alt="Logito"
         width="100px"> </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -53,9 +53,8 @@
               <li><a class="dropdown-item" href="{% url 'api' %}">Solicitar Datos API</a></li>
             </ul>
         </ul>
-        <div class="clima me-4">
-        <button id="PedirClima" class="btn btn-primary">Pedir Clima</button>        
-         <div class="alert m-1" role="alert" id="msg" style="color: white;">
+        <div class="clima me-4">       
+         <div class="alert m-1" role="alert" id="msg" style="color: white;" >cargando..
     </div>
     </div>
         <form class="d-flex me-4 ">
@@ -137,7 +136,7 @@
         <div class="carousel-inner">
           {%for ca in carruselCompleto%}
           <div class="carousel-item {%if forloop.counter0 == 0%}active{%endif%}">
-            <a href="{% url 'trabajos' %}"><img src="{{ca.imagenCarrusel}}" class="d-block w-100" alt="Automotriz"
+            <a href="{% url 'trabajos' %}"><img src="{{ca.imagenCarrusel.url}}" class="d-block w-100" alt="Automotriz"
             height="600px"></a>
             <div class="carousel-caption d-inline d-md-block">
               <h5>{{ca.textoCarrusel}}</h5>
