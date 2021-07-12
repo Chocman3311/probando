@@ -127,12 +127,12 @@
       <div class="card-body">
         <h3 class="card-title">{{tr.tituloTrabajo}}</h3>
         <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal{{tr.idCarta}}">
               Ver detalle del trabajo
             </button>
 
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="exampleModal{{tr.idCarta}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
